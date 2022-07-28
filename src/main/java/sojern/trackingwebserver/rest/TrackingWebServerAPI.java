@@ -59,7 +59,7 @@ public class TrackingWebServerAPI {
     @Produces("text/plain")
     public Response pingTempFile() {
         File file = new File(TEMP_OK_FILE);
-        if(file!=null && file.exists()) {
+        if(file.exists()) {
             return Response.status(Response.Status.OK).entity("OK").build();
         }
         else{
