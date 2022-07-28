@@ -10,7 +10,7 @@ import java.util.logging.*;
 public class LogHandler {
 
     private static final String LOG_FILE_NAME = "c:/temp/log.log";
-    public static final Logger LOGGER = Logger.getLogger(TrackingWebServerAPI.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(TrackingWebServerAPI.class.getName());
 
     public void logRequest(HttpHeaders httpHeaders) {
         try {
