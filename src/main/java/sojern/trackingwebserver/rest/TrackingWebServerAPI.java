@@ -20,6 +20,7 @@ public class TrackingWebServerAPI {
     private static final String OK_FILE = "/tmp/ok";
     private static final String TEMP_OK_FILE = System.getProperty("java.io.tmpdir")+"tmp/ok";
     private static final String IMAGE_FILE = "/img/1x1.gif";
+    private static final String CLASS_NAME = TrackingWebServerAPI.class.getName();
     private final LogHandler logger = new LogHandler();
 
 
@@ -41,7 +42,7 @@ public class TrackingWebServerAPI {
     @Path("/img")
     @Produces(MediaType.APPLICATION_OCTET_STREAM)
     public Response image(@Context HttpHeaders httpHeaders) {
-        logger.logRequest(httpHeaders);
+        logger.logRequest(httpHeaders, CLASS_NAME);
         File image = getFile(IMAGE_FILE);
         if(image!=null){
             return Response.ok(image, MediaType.APPLICATION_OCTET_STREAM)

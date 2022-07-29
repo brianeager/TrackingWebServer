@@ -10,14 +10,14 @@ import java.util.logging.*;
 public class LogHandler {
 
     private static final String LOG_FILE_NAME = "c:/temp/log.log";
-    private static final Logger LOGGER = Logger.getLogger(TrackingWebServerAPI.class.getName());
 
     /**
      * Log request information to log file
      * @param httpHeaders
      */
-    public void logRequest(HttpHeaders httpHeaders) {
+    public void logRequest(HttpHeaders httpHeaders, String className) {
         try {
+            Logger LOGGER = Logger.getLogger(className);
             FileHandler fileHandler = new FileHandler(LOG_FILE_NAME, true);
             LOGGER.addHandler(fileHandler);
             SimpleFormatter formatter = new SimpleFormatter();
