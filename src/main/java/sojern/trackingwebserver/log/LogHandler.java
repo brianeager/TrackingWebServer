@@ -1,7 +1,5 @@
 package sojern.trackingwebserver.log;
 
-import sojern.trackingwebserver.rest.TrackingWebServerAPI;
-
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.core.HttpHeaders;
 import java.io.IOException;
